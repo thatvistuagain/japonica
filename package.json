@@ -1,0 +1,29 @@
+{
+  "name": "japonica",
+  "version": "1.0.0",
+  "description": "Código fuente de _Japónica_, un pequeño proyecto para guardar traducciones fanmade de canciones japonesas.",
+  "main": "index.js",
+  "scripts": {
+    "start": "eleventy --serve",
+    "build": "eleventy"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thatvistuagain/japonica.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thatvistuagain/japonica/issues"
+  },
+  "homepage": "https://github.com/thatvistuagain/japonica#readme",
+  "devDependencies": {
+    "@11ty/eleventy": "^2.0.1"
+  },
+  "dependencies": {
+    "markdown-it": "^14.0.0",
+    "markdown-it-attrs": "^4.1.6",
+    "moment": "^2.29.4"
+  }
+}

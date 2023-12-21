@@ -1,387 +1,841 @@
-:root {
-  --fs-300: 0.9375rem;
-  --fs-400: 1.0625rem;
-  --fs-500: 1.375rem;
-  --fs-600: 1.875rem;
-  --fs-700: 2rem;
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-synthesis: none;
 
-  --ff-body: "Roboto", sans-serif;
-  --ff-heading: "Playfair Display", serif;
-
-  --fw-400: 400;
-  --fw-700: 700;
-  --fw-900: 900;
-
-  --clr-primary-200: hsla(169, 70%, 95%, 1);
-  --clr-primary-300: hsla(169, 100%, 39%, 1);
-  --clr-primary-400: hsla(169, 100%, 26%, 1);
-  --clr-primary-500: hsla(169, 100%, 16%, 1);
-
-  --clr-neutral-100: hsla(0, 0%, 100%, 1);
-  --clr-neutral-300: hsla(0, 0%, 50%, 1);
-  --clr-neutral-400: hsla(0, 0%, 40%, 1);
-  --clr-neutral-500: hsla(0, 0%, 60%, 1);
-  --clr-neutral-900: hsla(0, 0%, 10%, 1);
+  --texto: hsl(0, 0%, 7%);
+  --link: hsl(12, 62%, 68%);
+  --gris: hsl(48, 30%, 87%);
+  --grisb: hsla(0, 0%, 100%, 0.2);
+  --dim: hsl(48, 20%, 40%);
+  --oscu: hsl(210, 7%, 17%);
+  --sect: hsla(210, 7%, 17%, 0.4);
+  --bg: hsl(48, 60%, 98%);
+  --bg-alt: hsl(20, 62%, 68%, 0.1);
+  --w: hsl(0, 0%, 100%);
+  --roma: 4px;
+  --interior: 1.5rem;
+  --magral: 45rem;
+  --prosa: 0.6px;
+  --serif: 'ten-mincho-text', 'Palatino', 'Iowan Old Style', 'Palatino Linotype', "Times New Roman", "游明朝", YuMincho, "Hiragino Mincho ProN W3", "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", ui-serif, serif;
+  --sans: Seravek, Candara, "游ゴシック体", "Yu Gothic", "YuGothic", "ヒラギノ角ゴシック Pro", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", "Osaka", "ＭＳ Ｐゴシック", "MS PGothic", system-ui, sans-serif;
+  --print: 'Palatino', 'Iowan Old Style', 'Palatino Linotype', "Times New Roman", "游明朝", YuMincho, "Hiragino Mincho ProN W3", "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", ui-serif, serif;
 }
 
-@media (min-width: 35em) {
-  :root {
-    --fs-300: 1rem;
-    --fs-400: 1.125rem;
-    --fs-500: 1.5rem;
-    --fs-600: 2.25rem;
-    --fs-700: 3rem;
+@media (prefers-color-scheme: dark) {
+  * {
+    --texto: hsl(210, 17%, 98%);
+    --dim: hsl(48, 4%, 87%);
+    --gris: hsla(0, 0%, 100%, 0.2);
+    --bg: hsl(0, 0%, 13%);
+    --bg-alt: hsl(0, 0%, 22%);
+    --w: hsl(48, 60%, 98%);
   }
 }
 
-/* //////////////////////
-  RESET - source: https://piccalil.li/blog/a-modern-css-reset
-  /////////////////////// */
-
-/* Box sizing rules */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
+html {
+  font-size: 18px;
 }
 
-/* Remove default margin */
-body,
+/* Responsive */
+
+input,
+textarea,
+select {
+  font-family: var(--sans);
+  font-size: inherit;
+  color: inherit;
+  vertical-align: middle;
+  box-sizing: border-box
+}
+
+a img {
+  border-style: none
+}
+
+ul,
+ol {
+  list-style-type: none
+}
+
+article ul, ol {
+  padding-left: 1.5rem;
+}
+
+article ul li {
+  list-style-type: circle;
+  margin-bottom: 0.2em;
+  position: relative;
+}
+
+hr {
+  border: 0;
+  display: block;
+  margin: 1em 0;
+  padding: 0;
+  height: 1px
+}
+
+.cf:before,
+.cf:after {
+  content: " ";
+  display: table
+}
+
+.cf:after {
+  clear: both
+}
+
+/* ===================================
+GENERAL
+=================================== */
+
+body {
+  font: normal 400 1rem/1.6 var(--serif);
+  font-feature-settings: 'liga', 'clig', 'lnum', 'palt' 1;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  color: var(--texto);
+  background-color: var(--bg);
+  padding: 20px;
+  text-align: center;
+}
+
+a {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  color: inherit;
+  outline: none;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent
+}
+
+#rightcolumn a,
+aside a {
+  color: #365d95;
+  border-bottom: 1px solid #ddd
+}
+
+#rightcolumn a:hover,
+aside a:hover {
+  background: rgba(225, 59, 139, .8);
+  color: var(--bg);
+  transition: .6s
+}
+
+#rightcolumn a.bg-none,
+a.bg-none {
+  border-bottom: 0
+}
+
+#rightcolumn a.bg-none:hover,
+a.bg-none:hover {
+  background: none;
+  color: inherit
+}
+
+#rightcolumn .line>a {
+  border-bottom: 0;
+  margin: 0
+}
+
+/* ===================================
+基本
+=================================== */
+
+#wrapper {
+  margin: 0 auto 50px;
+  position: relative;
+  max-width: 950px;
+}
+
+#header-inner {
+  padding: 0 0 20px 0;
+  text-align: left
+}
+
+#rightcolumn-wrap {
+  float: right;
+  margin-left: -200px;
+  width: 100%;
+}
+
+#rightcolumn {
+  border: 1px solid var(--texto);
+  margin-left: 200px;
+  padding: var(--interior);
+  position: relative;
+  text-align: left;
+}
+
+#leftcolumn-wrap {
+  float: left;
+  width: 200px;
+}
+
+#leftcolumn {
+  padding-right: var(--interior);
+}
+
+/* ===================================
+メニュー
+=================================== */
+
+#menu {
+  display: block;
+  margin: 0 auto
+}
+
+nav li a,
+nav li span {
+  background: url(image/back01.gif) var(--bg);
+  border: 1px solid var(--texto);
+  box-sizing: content-box;
+  display: block;
+  font-weight: 400;
+  margin: 0 auto 0.5rem;
+  padding: 0.5rem;
+  position: relative;
+}
+
+nav li a:hover,
+nav li span:hover {
+  background: var(--bg-alt);
+  transition: .6s
+}
+
+.sub-menu {
+  display: none;
+  margin: 0;
+  overflow: hidden
+}
+
+.sub-menu li a {
+  background: var(--bg-alt);
+}
+
+.sub-menu li:first-child a {
+  margin-top: 0
+}
+
+/*  メニューの「>」
+------------------------------ */
+nav li span:after {
+  border-top: 1px solid var(--texto);
+  border-right: 1px solid var(--texto);
+  content: "";
+  display: block;
+  margin-top: -5px;
+  position: absolute;
+  height: 5px;
+  width: 5px;
+  top: 50%;
+  right: 10px;
+  -ms-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  transition: .5s;
+}
+
+nav li span.open:after {
+  -ms-transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+  transform: rotate(135deg);
+}
+
+#open {
+  display: none
+}
+
+/* ===================================
+ページ上部へのリンク、著作権表示
+=================================== */
+
+#pagetop {
+  background: rgba(0, 0, 0, .7);
+  border-radius: 10px;
+  bottom: -80px;
+  box-sizing: border-box;
+  color: #fff;
+  display: block;
+  padding: 10px;
+  position: fixed;
+  text-align: center;
+  z-index: 10
+}
+
+#pagetop:hover {
+  background: rgba(0, 0, 0, .9)
+}
+
+#fl {
+  margin-top: 80px;
+  text-align: center
+}
+
+#fl a {
+  display: inline-block;
+  margin: 20px 0
+}
+
+/* ===================================
+index
+=================================== */
+
+.indexbox {
+  border: 1px solid var(--texto);
+  margin: 0px auto;
+  padding: 20px;
+  text-align: center;
+  max-width: 500px
+}
+
+/* ===================================
+Tables
+=================================== */
+
+table {
+  margin: 2rem 0;
+  border-collapse: collapse;
+  border-bottom: 2px dotted var(--gris);
+  width: 100%;
+  line-height: 1.3;
+  table-layout: fixed;
+}
+
+thead,
+caption {
+  font-family: var(--sans);
+  border-bottom: 2px dotted var(--gris);
+  text-align: left;
+}
+
+caption,
+th,
+td {
+  padding: 1rem;
+  /*white-space: nowrap;*/
+}
+
+td {
+  vertical-align: top;
+}
+
+tr[data-cell] {
+  background-color: var(--bg-alt);
+}
+
+th {
+  font-weight: 400;
+  font-style: italic;
+}
+
+.table-box {
+  max-width: 100%;
+}
+
+.romaji {
+  display: block;
+  font-family: var(--sans);
+  font-style: italic;
+  font-size: 80%;
+  line-height: 1.1 !important;
+}
+
+/* Ruby */
+ruby {
+  ruby-position: under;
+  -webkit-ruby-position: after;
+}
+
+ruby>rt {
+  font-family: var(--sans);
+  font-size: 60%;
+}
+
+/* ===================================
+Figures and iFrames
+=================================== */
+
+figure {
+  padding: 0;
+  border: 0;
+  vertical-align: baseline;
+  -webkit-margin-start: 0;
+  -webkit-margin-end: 0;
+}
+
+.iframe-wrapper {
+  position: relative;
+  padding-bottom: 56.25%;
+  padding-top: 25px;
+  height: 0;
+}
+
+.iframe-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Basics */
+
 h1,
 h2,
 h3,
-h4,
-p,
-figure,
-blockquote,
-dl,
-dd {
-  margin: 0;
+h4 {
+  font-weight: 400;
 }
 
-/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
-ul:where([role="list"]),
-ol:where([role="list"]) {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+#header-inner h1 {
+  font-size: 1.5rem;
+  margin: 0 0 10px;
+  text-transform: uppercase;
+  letter-spacing: var(--prosa);
 }
 
-/* Set core root defaults */
-html:focus-within {
-  scroll-behavior: smooth;
+#header-inner p {
+  line-height: 1.2;
 }
 
-/* Set core body defaults */
-body {
-  min-height: 100vh;
-  text-rendering: optimizeSpeed;
-  line-height: 1.5;
+article h1 {
+  font-size: 1.5rem;
+  border-bottom: 1px solid;
+  margin: 0 0 calc(var(--interior) + 0.5rem) 0;
+  padding: .0;
 }
 
-/* A elements that don't have a class get default styles */
-a:not([class]) {
-  text-decoration-skip-ink: auto;
+h2 {
+  font-size: 1.25rem;
+  font-style: italic;
+  margin-bottom: 0.5rem;
+  margin-top: var(--interior);
 }
 
-/* Make images easier to work with */
-img,
-picture {
-  max-width: 100%;
+article h2::after {
+  content: "";
   display: block;
+  width: var(--interior);
+  border-bottom: 2px solid var(--link);
+  margin-top: 0.25rem;
 }
 
-/* Inherit fonts for inputs and buttons */
-input,
-button,
-textarea,
-select {
-  font: inherit;
+#leftcolumn h2 {
+  margin: 20px 0
 }
 
-/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
-@media (prefers-reduced-motion: reduce) {
-  html:focus-within {
-    scroll-behavior: auto;
-  }
-
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
+#leftcolumn>h2:first-child,
+#rightcolumn h2:first-child {
+  margin-top: 0
 }
 
-/* //////////////////////
-  General styling
-  /////////////////////// */
-
-body {
-  font-family: var(--ff-body);
-  font-size: var(--fs-400);
-  color: var(--clr-neutral-900);
-}
-
-h1,
-h2,
 h3 {
-  font-family: var(--ff-heading);
-  font-weight: var(--fw-900);
-  line-height: 1.1;
+  font-size: 1.1em;
+  margin: 20px 0
 }
 
-strong {
-  font-weight: var(--fw-700);
-}
-
-section,
-.section {
-  padding: min(10vh, 10em) 0;
-}
-
-
-
-/* //////////////////////
-  Utility Classes
-  /////////////////////// */
-
-/* select all direct childen of .flow
-   and add margin to the top for proper
-   spacing */
-
-.flow > *:where(:not(:first-child)) {
-  margin-top: var(--flow-spacer, 1em);
-}
-
-.container {
-  margin-inline: auto;
-  padding-inline: 1.5em;
-  max-width: 72rem;
-}
-
-.container--narrow {
-  max-width: 65rem;
-}
-
-.flex-group {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--gap, 1em);
-}
-
-.text-center {
-  text-align: center;
-}
-
-/* typgraphy */
-
-.article-title,
-.section-title {
-  color: var(--clr-primary-500);
-}
-
-.article-title {
-  font-size: var(--fs-700);
-}
-
-.section-title {
-  font-size: var(--fs-600);
-}
-
-
-/* //////////////////////
-  Header
-  /////////////////////// */
-
-.page-header {
-  padding: 2em 0;
-}
-
-.page-header__content {
-  display: flex;
-  justify-content: space-between;
-}
-
-.nav-list {
-  margin: 0;
-  padding: 0;
-}
-
-.nav-list a {
-  color: var(--clr-neutral-900);
-  text-decoration: none;
-}
-
-.nav-list a:focus,
-.nav-list a:hover {
-  color: var(--clr-primary-400);
-  text-decoration: underline;
-}
-
-/* //////////////////////
-  Footer
-  /////////////////////// */
-
-.site-footer {
-  --logo-color: currentColor;
-  padding: 2em 0;
-  color: var(--clr-neutral-100);
-  background-color: var(--clr-primary-500);
-  text-align: center;
-}
-
-/* //////////////////////
-  Homepage
-  /////////////////////// */
-
-.hero > div {
-  display: grid;
-  grid-auto-flow: row;
-  grid-auto-columns: 1fr;
-  align-items: center;
-  gap: 3em;
-}
-
-.hero__image {
-  width: 100%;
-  /* max-height: max(15rem, 40vh); */
-  object-fit: cover;
-}
-
-@media (min-width: 45em) {
-  .hero > div {
-    grid-auto-flow: column;
-  }
-}
-
-.featured-articles {
-  background-color: var(--clr-primary-200);
-}
-
-.articles__list {
-  --flow-spacer: 3rem;
-  margin: 6rem 0;
-}
-
-/* //////////////////////
-  Individual article page
-  /////////////////////// */
-
-  .main-article {
-    margin-bottom: 3rem;
-  }
-
-  .main-article__figure figcaption {
-    margin: 1rem 0;
-    font-size: var(--fs-300);
-    opacity: .9;
-  }
-
-/* //////////////////////
-  Article snippets
-  /////////////////////// */
-
-.snippet {
-  display: grid;
-  gap: 1em;
-  grid-template-areas:
-    "image"
-    "title"
-    "meta"
-    "body"
-    "button";
-}
-
-.snippet__image {
-  grid-area: image;
-  width: 100%;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
-}
-.snippet__title {
-  grid-area: title;
-}
-.snippet__meta {
-  grid-area: meta;
-  color: var(--clr-neutral-300);
-}
-
-.snippet__meta span {
-  color: var(--clr-neutral-900);
-}
-
-.snippet .btn {
-  grid-area: button;
-}
-
-.snippet__title {
-  color: var(--clr-neutral-900);
-  font-size: var(--fs-500);
-}
-
-.snippet__title a {
-  color: inherit;
-  text-decoration: none;
-}
-
-.snippet__title a:hover,
-.snippet__title a:focus {
-  color: var(--clr-primary-500);
-} 
-
-@media (min-width: 45em) {
-  .snippet {
-    grid-template-areas:
-      "title image"
-      "meta image"
-      "body image"
-      "button image";
-    grid-column-gap: 4em;
-    grid-template-columns: 1fr 40%;
-    grid-template-rows: min-content min-content min-content 1fr;
-  }
-}
-
-.btn {
-  cursor: pointer;
-  text-decoration: none;
+h3 span {
+  background: var(--texto);
+  color: var(--bg);
   display: inline-block;
-  line-height: 1;
-  padding: 0.75em 1.75em;
-  border-radius: 0.25em;
-  align-self: start;
-  justify-self: start;
+  line-height: 20px;
+  padding: 0 10px;
+  position: relative;
+  text-align: center;
+  vertical-align: middle;
+  left: 10px;
+  min-width: 100px
 }
 
-.btn:focus {
-  outline: 0.125em solid var(--clr-primary-400);
-  outline-offset: 0.25em;
+h3 span:before,
+h3 span:after {
+  content: "";
+  border-width: 10px 0 10px 10px;
+  border-style: solid;
+  position: absolute;
+  height: 0;
+  width: 0
 }
 
-.btn--primary {
-  background: var(--clr-primary-400);
-  color: var(--clr-neutral-100);
-  font-weight: var(--fw-700);
-  border: 2px solid var(--clr-primary-400);
-}
-.btn--primary:hover,
-.btn--primary:focus {
-  background: var(--clr-primary-500);
-  border-color: var(--clr-primary-500); 
+h3 span:before {
+  border-color: var(--texto) transparent;
+  left: -10px
 }
 
-.btn--neutral {
-  background-color: var(--clr-neutral-100);
-  color: var(--clr-neutral-900);
-  font-weight: var(--fw-700);
-  border: 2px solid var(--clr-neutral-900);
+h3 span:after {
+  border-color: transparent var(--texto);
+  right: -10px
 }
 
-.btn--neutral:hover,
-.btn--neutral:focus {
-  color: var(--clr-neutral-100);
-  background-color: var(--clr-neutral-900);
+h2+h3 {
+  margin-top: 0
+}
+
+.vers {
+  font-variant: small-caps;
+  -moz-font-feature-settings: 'smcp';
+  -webkit-font-feature-settings: 'smcp';
+  -ms-font-feature-settings: 'smcp';
+  font-feature-settings: 'smcp';
+  letter-spacing: 0.04em;
+  text-transform: lowercase;
+}
+
+h1+p,
+h2+p,
+h3+p,
+hr+p,
+label,
+.destaque,
+.entreC,
+.sidenote {
+  text-indent: 0 !important;
+}
+
+article p, article ul, article ol {
+  text-align: left;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+dt {
+  clear: both;
+  font-weight: 700;
+  float: left;
+  margin: 0 0 5px;
+  padding: 2px 5px;
+  width: 12em
+    /* 文字数によっては調整 */
+}
+
+dd {
+  border-bottom: dotted 1px #999;
+  margin: 0 0 5px 14em;
+  /* dtのwidthに2足してます */
+  padding: 2px 0
+}
+
+input,
+textarea {
+  background: var(--bg);
+  border: 1px solid;
+  margin: 3px 0;
+  width: 250px
+}
+
+textarea {
+  height: 50px
+}
+
+#leftcolumn input,
+#leftcolumn textarea {
+  width: 100%
+}
+
+hr {
+  border-top: 1px solid #ccc
+}
+
+.marker {
+  background: #a8f0f0;
+  background: -webkit-linear-gradient(rgba(168, 240, 240, 0) 50%, #a8f0f0 0%);
+  background: linear-gradient(rgba(168, 240, 240, 0) 50%, #a8f0f0 0%);
+  border-radius: 3px;
+  padding: 1px 5px
+}
+
+.dcline {
+  border-left: 5px solid #d2d2d2;
+  margin: 8px 0;
+  padding: 3px 3px 3px 10px
+}
+
+.textbox {
+  border: 1px dotted;
+  margin: 10px 0;
+  padding: 3px;
+  text-align: center
+}
+
+.title {
+  color: #d2d2d2;
+  font-size: 1.5em;
+  font-weight: 700;
+  margin: 2em 0
+}
+
+/*  複数行の右寄せ
+------------------------------ */
+.r-justified {
+  text-align: right
+}
+
+.r-justified p {
+  display: inline-block;
+  text-align: left
+}
+
+.inline {
+  display: inline-block
+}
+
+/* ===================================
+横幅800pxで切り替え
+=================================== */
+
+@media screen and (max-width: 800px) {
+  dt {
+    float: none;
+    clear: none
+  }
+
+  dd {
+    margin-left: 20px
+  }
+
+  input,
+  textarea {
+    width: 100%
+  }
+
+  img {
+    max-width: 100%;
+    height: auto
+  }
+
+  /* 画像の縮小表示 */
+}
+
+/* ===================================
+スマホ、タブレット用
+横幅600pxで切り替え
+=================================== */
+
+@media screen and (max-width: 600px) {
+  body {
+    padding: 15px;
+  }
+
+  #header-inner {
+    padding: 0;
+    min-height: 60px;
+    margin-right: 60px;
+    margin-bottom: 1rem;
+  }
+
+  #rightcolumn {
+    padding: 20px
+  }
+
+  #leftcolumn {
+    padding: 10px
+  }
+
+  h1 {
+    font-size: 1.2em
+  }
+
+  #rightcolumn h2 {
+    margin: 20px -10px
+  }
+
+  #rightcolumn-wrap {
+    float: none;
+    margin-left: 0
+  }
+
+  #rightcolumn {
+    margin-left: 0
+  }
+
+  #leftcolumn {
+    float: none
+  }
+
+  a:hover,
+  nav span:hover,
+  #rightcolumn a:hover {
+    background: none;
+    color: inherit
+  }
+
+  /* ===================================
+スマホ、タブレット用メニュー
+=================================== */
+
+  /*  スライド
+------------------------------ */
+  #leftcolumn-wrap {
+    background: var(--bg);
+    line-height: 2;
+    margin: 0;
+    padding: 70px 10px 20px;
+    /* メニューボタン分空ける */
+    position: fixed;
+    height: 100%;
+    width: 300px;
+    /* (*1)同じにする */
+    top: 0;
+    right: 0;
+    -ms-transform: translate(300px);
+    /* (*1)同じにする */
+    -webkit-transform: translate(300px);
+    /* (*1)同じにする */
+    transform: translate(300px);
+    /* (*1)同じにする */
+    transition: .3s;
+    z-index: 1000
+  }
+
+  #side-bg {
+    background: rgba(51, 51, 51, .5)
+      /* 周りの背景色 */
+  }
+
+  /*  メニュー
+------------------------------ */
+  nav li a,
+  nav li span {
+    padding: 5px;
+    box-sizing: border-box;
+    width: 100%
+  }
+
+  /*  メニューを開くボタン
+------------------------------ */
+  #open {
+    background: var(--texto);
+    color: var(--bg);
+    display: inline-block;
+    position: absolute;
+    text-align: center;
+    height: 50px;
+    width: 50px;
+    /* 大きさ */
+    top: 0;
+    right: 0;
+    z-index: 1001
+  }
+
+  #leftcolumn {
+    height: 100%;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch
+  }
+
+  #leftcolumn-wrap.open {
+    -ms-transform: translate(0);
+    -webkit-transform: translate(0);
+    transform: translate(0)
+  }
+
+  #side-bg {
+    display: none;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    cursor: pointer
+  }
+
+  #open.buttonclose {
+    position: fixed;
+    top: 15px;
+    right: 15px
+  }
+
+  .open-text {
+    font-size: 12px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%
+  }
+
+  #open-icon,
+  #open-icon:before,
+  #open-icon:after {
+    background: var(--bg);
+  }
+
+  /* 線の色 */
+  #open-icon {
+    display: block;
+    margin: -1px 0 0 -10px;
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    height: 2px;
+    width: 20px
+  }
+
+  #open-icon:before,
+  #open-icon:after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    height: 2px;
+    width: 20px;
+    transition: .3s
+  }
+
+  #open-icon:before {
+    margin-top: -8px
+  }
+
+  #open-icon:after {
+    margin-top: 6px
+  }
+
+  #open .close {
+    background: transparent
+  }
+
+  #open .close:before,
+  #open .close:after {
+    margin-top: 0
+  }
+
+  #open .close:before {
+    -ms-transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg)
+  }
+
+  #open .close:after {
+    -ms-transform: rotate(-135deg);
+    -webkit-transform: rotate(-135deg);
+    transform: rotate(-135deg)
+  }
+
+  td {
+    display: block;
+    padding: 0.5rem 0;
+  }
+
+  th {
+    display: none;
+  }
+
+  td:nth-child(2n) {
+    padding-left: 1rem;
+  }
 }
