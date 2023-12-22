@@ -1,0 +1,25 @@
+---
+title: 'Sakanaction'
+nombre: 'サカナクション'
+layout: 'perfil.njk'
+type: 'perfil'
+tags:
+  - bandas
+  - post
+portada: '/assets/portadas/sakanaction'
+---
+
+<figure class="portada">
+  <img src="{{portada}}.webp" loading="lazy">
+</figure>
+
+<span class="nombre-og" lang="ja">{{ nombre }}</span>
+
+<p>Perfil de Sakanaction</p>
+
+<h2>Traducciones disponibles</h2>
+<ul>
+{%- for trad in collections.Sakanaction | sortByTitle -%}
+  <li><a href="{{ trad.url }}">{{ trad.data.title }} • <small lang="ja">{{ trad.data.nombre }}</small></a>
+{%- endfor -%}
+</ul>

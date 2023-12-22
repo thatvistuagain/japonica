@@ -14,6 +14,14 @@ module.exports = function(eleventyConfig) {
     eleventyConfig.addFilter('dateReadable', date => {
         return moment(date).utc().format('MMM DD YY'); // V.gr. May. 14 23
     });
+
+    eleventyConfig.addFilter('sortByTitle', values => {
+        return values?.slice().sort((a, b) => a.data.title.localeCompare(b.data.title))
+    });
+
+    eleventyConfig.addFilter('sortByApellidos', values => {
+        return values?.slice().sort((a, b) => a.data.apellidos.localeCompare(b.data.apellidos))
+    });
     
     let markdownIt = require("markdown-it");
     var markdownItAttrs = require('markdown-it-attrs');

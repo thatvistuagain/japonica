@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<!--
+この道や行く人なしに秋の暮れ
+-->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#fff">
+    {%- if type == 'inicio' -%}
+    <title>Japónica</title>
+    {% else %}
+    <title>{{ title }} | Japónica</title>
+    {%- endif -%}
+    <meta name="description" content="Traducciones fanmade de canciones japonesas al español">
+    <meta name="keywords" content="Literatura, Traducciones, Fansub, Japonés">
+    <!-- OG -->
+    <meta property="og:title" content="Japónica">
+    <meta property="og:description" content="Traducciones fanmade de canciones japonesas al español">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="https://www.elcuadernosinhojas.com/assets/site.jpg">
+    <meta property="og:image:width" content="1776">
+    <meta property="og:image:height" content="999">
+    <!-- Twitter -->
+    <meta name="twitter:title" content="Japónica">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@a_vistu">
+    <meta name="twitter:description" content="Traducciones fanmade de canciones japonesas al español">
+    <meta name="twitter:image" content="https://www.elcuadernosinhojas.com/assets/site.jpg">
+    <meta name="twitter:creator" content="@a_vistu">
+    <!-- CSS -->
+    <link rel="stylesheet" href="/style.css" type="text/css">
+    {% include 'cjk-adobe.njk' %} 
+    <link rel="icon" href="/image/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/image/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="/image/apple-touch-icon.png">
+</head>
+
+<body id="{{ type }}">
+    <div id="wrapper">
+        <div id="open"><span id="open-icon"></span><span class="open-text">Menú</span></div>
+
+        {% include 'header.njk' %}
+
+        <div id="contents" class="cf">
+            <div id="rightcolumn-wrap">
+                <div id="rightcolumn">
+                    <article>
+                        <h1>{{ title }}</h1>
+                        {{ content | safe }}
+                    </article>
+                </div>
+            </div>
+            <div id="side-bg"></div>
+                {% include 'side-menu.njk' %} 
+        </div>
+
+        <div style="height:500px"></div>
+    </div>
+
+    <a href="#" id="pagetop">上</a>
+
+    <!-- JQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="/assets/function/jquery.scroll.js"></script>
+    <script src="/assets/function/jquery.toggle.js"></script>
+</body>
+
+</html>
