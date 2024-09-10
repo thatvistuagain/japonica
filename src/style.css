@@ -380,6 +380,11 @@ figure {
   -webkit-margin-end: 0;
 }
 
+figcaption {
+  font-family: var(--sans);
+  font-size: 0.8rem;
+}
+
 .iframe-wrapper {
   position: relative;
   padding-bottom: 56.25%;
@@ -653,10 +658,6 @@ img, figure {
 
   h1 {
     font-size: 1.2em
-  }
-
-  #rightcolumn h2 {
-    margin: 20px -10px
   }
 
   #rightcolumn-wrap {
