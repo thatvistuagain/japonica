@@ -7,19 +7,9 @@ tags:
   - bandas
   - post
 portada: '/assets/portadas/sakanaction'
+pie: 'Miembros de la banda'
 ---
 
-<figure class="portada">
-  <img src="{{portada}}.webp" loading="lazy">
-</figure>
+<h2>Perfil</h2>
 
-<span class="nombre-og" lang="ja">{{ nombre }}</span>
-
-<p>Perfil de Sakanaction</p>
-
-<h2>Traducciones disponibles</h2>
-<ul>
-{%- for trad in collections.Sakanaction | sortByTitle -%}
-  <li><a href="{{ trad.url }}">{{ trad.data.title }} • <small lang="ja">{{ trad.data.nombre }}</small></a>
-{%- endfor -%}
-</ul>
+<h2>Discografía selecta</h2>
