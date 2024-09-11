@@ -54,14 +54,18 @@
                             {%- set selectedBand = title -%}
                             {% for item in discos.obra %}
                                 {% if item.banda == selectedBand %}
+                                <div class="discos-grid">
                                     {% for album in item.albumes %}
                                         <div>
-                                            <h3>{{ album.tit }}</h3>
-                                            <p>{{ album.toj }}</p>
-                                            <p>Release date: {{ album.lan }}</p>
-                                            <img src="{{ album.por }}" alt="{{ album.tit }} cover">
+                                            <div>
+                                                <h3>{{ album.tit }}</h3>
+                                                <p>{{ album.toj }}</p>
+                                                <p>Release date: {{ album.lan }}</p>
+                                            </div>
+                                            <img src="{{ album.por }}" alt="Portada de{{ album.tit }}" loading="lazy">
                                         </div>
                                     {% endfor %}
+                                </div>
                                 {% endif %}
                             {% endfor %}
                             <h2>Traducciones disponibles</h2>

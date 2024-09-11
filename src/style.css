@@ -604,6 +604,24 @@ img, figure {
   aspect-ratio: 16/9;
 }
 
+/* Discos */
+
+.discos-grid {
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.discos-grid > div {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+}
+
+.discos-grid > div > div h3 {
+  font-style: italic;
+  margin-top: 0;
+}
+
 /* ===================================
 横幅800pxで切り替え
 =================================== */
