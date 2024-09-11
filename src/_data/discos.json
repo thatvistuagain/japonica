@@ -1,0 +1,32 @@
+{
+    "obra": [
+        {
+            "banda": "Frederic",
+            "albumes": [
+                {
+                    "tit": "Frederhythm 3",
+                    "toj": "フレデリズム３",
+                    "lan": "2022-03-30",
+                    "por": "https://lastfm.freetls.fastly.net/i/u/500x500/36f6beb90979dfaa04a33267877d9fae.jpg"
+                },
+                {
+                    "tit": "Frederhythm 2",
+                    "toj": "フレデリズム２",
+                    "lan": "2019-02-20",
+                    "por": "https://lastfm.freetls.fastly.net/i/u/500x500/36f6beb90979dfaa04a33267877d9fae.jpg"
+                }
+            ]
+        },
+        {
+            "banda": "Sakanaction",
+            "albumes": [
+                {
+                    "tit": "Shin-shiro",
+                    "toj": "シンシロ",
+                    "lan": "2022-03-30",
+                    "por": "https://lastfm.freetls.fastly.net/i/u/500x500/36f6beb90979dfaa04a33267877d9fae.jpg"
+                }
+            ]
+        }
+    ]
+}

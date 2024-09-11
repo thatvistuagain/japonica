@@ -50,6 +50,20 @@
                                 <figcaption>{{ pie }}. Foto de {{ pieaut }}.</figcaption>
                             </figure>
                             {{ content | safe }}
+                            <h2>Discografía selecta</h2>
+                            {%- set selectedBand = title -%}
+                            {% for item in discos.obra %}
+                                {% if item.banda == selectedBand %}
+                                    {% for album in item.albumes %}
+                                        <div>
+                                            <h3>{{ album.tit }}</h3>
+                                            <p>{{ album.toj }}</p>
+                                            <p>Release date: {{ album.lan }}</p>
+                                            <img src="{{ album.por }}" alt="{{ album.tit }} cover">
+                                        </div>
+                                    {% endfor %}
+                                {% endif %}
+                            {% endfor %}
                             <h2>Traducciones disponibles</h2>
                             <ul>
                                 {%- set tradCollection = collections[title] | reverse -%}

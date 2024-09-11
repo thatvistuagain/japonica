@@ -18,5 +18,3 @@ Frederic (フレデリック) es una banda japonesa de rock alternativo formada 
 Frederic se dio a conocer con temas como "Oddloop", una de sus canciones más populares, que destaca por su ritmo bailable y su repetitiva pero hipnótica estructura lírica. Con su mezcla de energía rockera y ganchos pop irresistibles, la banda ha logrado consolidarse como una de las propuestas más frescas y emocionantes dentro de la escena musical japonesa, acumulando una base de fans tanto en Japón como a nivel internacional.
 
 ## Miembros
-
-## Discografía selecta
