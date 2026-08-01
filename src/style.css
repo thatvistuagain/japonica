@@ -336,10 +336,20 @@ td {
   vertical-align: top;
 }
 
-tr[data-cell] {
-  background-color: var(--bg-alt);
+tr {
+  &[data-cell="estribillo"], &[data-cell="precoro"] {
+    background-color: gainsboro;
+  }
+  &[data-cell="coro"] {
+    background-color: #fff3cd;
+  }
+  &[data-cell="puente"] {
+    background-color: blanchedalmond;
+  }
+  &[data-cell="coda"] {
+    background-color: #d1e7dd;
+  }
 }
-
 th {
   font-weight: 400;
   font-style: italic;
@@ -355,6 +365,10 @@ th {
   font-style: italic;
   font-size: 80%;
   line-height: 1.1 !important;
+
+  i, em {
+    font-style: normal;
+  }
 }
 
 /* Ruby */

@@ -7,7 +7,7 @@ tags:
   - bandas
   - post
 portada: '/assets/portadas/frederic'
-pie: 'De izquierda a derecha: Takeru Takashi, Kenji Mihara, Kōji Mihara, Ryūji Akagashira'
+pie: 'De izquierda a derecha: Takeru Takahashi, Kenji Mihara, Kōji Mihara, Ryūji Akagashira'
 pieaut: 'Fulano'
 ---
 
