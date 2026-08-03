@@ -28,7 +28,7 @@ video: "https://www.youtube.com/embed/T0DJWAj_d0A"
           </tr>
             <tr data-cell="estribillo">
                 <td>気づいてる　気づいてる　気づいてる二人<span class="romaji">kidzuiteru, kidzuiteru, kidzuiteru futari</span></td>
-                <td>Lo sabemos. Ya sabemos. Ambos lo sabemos.</td>
+                <td>Lo sabemos. Ya lo sabemos. Ambos lo sabemos.</td>
             </tr>
             <tr data-cell="estribillo">
                 <td>気づいてる　気づいてる<span class="romaji">kidzuiteru, kidzuiteru</span></td>
@@ -52,7 +52,7 @@ video: "https://www.youtube.com/embed/T0DJWAj_d0A"
           </tr>
             <tr data-cell="estribillo">
                 <td>気づいてる　気づいてる　気づいてる二人<span class="romaji">kidzuiteru, kidzuiteru, kidzuiteru futari</span></td>
-                <td>Lo sabemos. Ya sabemos. Ambos lo sabemos.</td>
+                <td>Lo sabemos. Ya lo sabemos. Ambos lo sabemos.</td>
             </tr>
             <tr data-cell="estribillo">
                 <td>気づいてる　気づいてる<span class="romaji">kidzuiteru, kidzuiteru</span></td>
@@ -72,7 +72,7 @@ video: "https://www.youtube.com/embed/T0DJWAj_d0A"
           </tr>
           <tr data-cell="coro">
               <td>意味もないのに左手で書いた名前<span class="romaji">imimonai no ni hidari te de kaita namae</span></td>
-              <td>El nombre, escrito con la izquierda: un sinsentido.</td>
+              <td>El nombre escrito con la izquierda: un sinsentido.</td>
           </tr>
           <tr data-cell="coro">
               <td>苦笑いして握りしめた手には汗<span class="romaji">nigawarai shite nigirishimeta te ni wa ase</span></td>
@@ -92,7 +92,7 @@ video: "https://www.youtube.com/embed/T0DJWAj_d0A"
           </tr>
             <tr data-cell="estribillo">
               <td>気づいてる　気づいてる　気づいてる二人<span class="romaji">kidzuiteru, kidzuiteru, kidzuiteru futari</span></td>
-              <td>Lo sabemos. Ya sabemos. Ambos lo sabemos.</td>
+              <td>Lo sabemos. Ya lo sabemos. Ambos lo sabemos.</td>
           </tr>
           <tr data-cell="estribillo">
               <td>気づいてる　気づいてる<span class="romaji">kidzuiteru, kidzuiteru</span></td>
@@ -136,7 +136,7 @@ video: "https://www.youtube.com/embed/T0DJWAj_d0A"
           </tr>
           <tr data-cell="coro">
               <td>意味もないのに左手で書いた名前<span class="romaji">imimonai no ni hidari te de kaita namae</span></td>
-              <td>El nombre, escrito con la izquierda: un sinsentido.</td>
+              <td>El nombre escrito con la izquierda: un sinsentido.</td>
           </tr>
           <tr data-cell="coro">
               <td>苦笑いして握りしめた手には汗<span class="romaji">nigawarai shite nigirishimeta te ni wa ase</span></td>
@@ -161,3 +161,5 @@ video: "https://www.youtube.com/embed/T0DJWAj_d0A"
       </tbody>
   </table>
 </div>
+
+## Comentarios a la traducción
